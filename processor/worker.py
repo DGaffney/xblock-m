@@ -271,7 +271,7 @@ async def main():
     worker = Worker(
         "xblock",
         process_request,
-        {"connection": os.environ["REDIS_CONNECTION_STRING"], "concurrency": 50},
+        {"connection": os.getenv["REDIS_CONNECTION_STRING"], "concurrency": 50},
     )
 
     # Wait until the shutdown event is set
